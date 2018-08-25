@@ -22,7 +22,7 @@ class Seating:
         self.columns = columns
 
         self._board = []  # main layout
-        for i in range(rows):
+        for _ in range(rows):
             row = [0] * columns
             self._board.append(row)
 
@@ -34,7 +34,6 @@ class Seating:
         seats = s.split(" ")
         for seat in seats:
             r, c = self._parse(seat)
-            cell = self._board[r][c]
             if self._board[r][c] == 0:
                 self._board[r][c] = 1
 
