@@ -5,7 +5,9 @@ from collections import namedtuple
 EXP = re.compile("\d+")
 
 """
-A location object which has the row number, column number of the starting seat, column number of the ending seat, exclusive. Used in checking for empty seats."""
+A location object which has the row number, column number of the starting seat, column number of the ending seat, exclusive.
+Used in checking for empty seats.
+"""
 Seats = namedtuple("Seats", "row start end")
 
 
