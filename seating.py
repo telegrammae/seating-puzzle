@@ -15,8 +15,8 @@ class Seating:
     """An instance of this class represents a seating layout."""
 
     def __init__(self, rows: int, columns: int):
-        if rows == 0 or columns == 0:
-            raise ValueError("The number of rows or columns cannot be zero.")
+        if rows < 1 or columns < 1:
+            raise ValueError("The number of rows and columns must be positive.")
 
         self.rows = rows
         self.columns = columns
@@ -91,7 +91,7 @@ class Seating:
             return False
 
         distances = [(coord, self._reduce_distance(coord)) for coord in coordinates]
-        # sort the coordinates by distance and get the shortest
+        # sort the coordinates by distance and get the closest
         closest = sorted(distances, key=lambda t: t[1])[0]
         seat = closest[0]  # get the namedtuple with the coordinates
         row, first, last = seat
